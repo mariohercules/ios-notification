@@ -36,7 +36,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
-        Navigator.navigate(to: NavigationViewController.self)
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        
+        for child in (self.window?.rootViewController?.childViewControllers)! {
+
+            if child.restorationIdentifier == "Three" {
+                
+                let tabbarcontroller = self.window?.rootViewController as! MainTabViewController
+                
+                tabbarcontroller.selectedIndex = 2
+                
+                let lastestPostsTableViewController = (child.childViewControllers[0]) as! ListTableViewController
+                let simplePostVC = (storyboard.instantiateViewController(withIdentifier: "Four")) as! BooksTableViewController
+                
+                lastestPostsTableViewController.navigationController?.pushViewController(simplePostVC, animated: true)
+            }
+        }
         
         // [END register_for_notifications]
         return true
