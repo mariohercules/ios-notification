@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        UNUserNotificationCenter.current().delegate = self
+        
         // [START set_messaging_delegate]
         Messaging.messaging().delegate = self
         // [END set_messaging_delegate]
@@ -36,26 +38,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        
-        for child in (self.window?.rootViewController?.childViewControllers)! {
-
-            if child.restorationIdentifier == "Three" {
-                
-                let tabbarcontroller = self.window?.rootViewController as! MainTabViewController
-                
-                tabbarcontroller.selectedIndex = 2
-                
-                let lastestPostsTableViewController = (child.childViewControllers[0]) as! ListTableViewController
-                let simplePostVC = (storyboard.instantiateViewController(withIdentifier: "Four")) as! BooksTableViewController
-                
-                lastestPostsTableViewController.navigationController?.pushViewController(simplePostVC, animated: true)
-            }
-        }
-        
         // [END register_for_notifications]
         return true
     }
+    
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        scheduleLocalNotification()
+    }
+
+    private func scheduleLocalNotification() {
+        // Create Notification Content
+        let notificationContent = UNMutableNotificationContent()
+        
+        // Configure Notification Content
+        notificationContent.title = "Cocoacasts"
+        notificationContent.subtitle = "Local Notifications"
+        notificationContent.body = "In this tutorial, you learn how to schedule local notifications with the User Notifications framework."
+        
+        // Add Trigger
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
+        
+        // Create Notification Request
+        let notificationRequest = UNNotificationRequest(identifier: "cocoacasts_local_notification", content: notificationContent, trigger: notificationTrigger)
+        
+        // Add Request to User Notification Center
+        UNUserNotificationCenter.current().add(notificationRequest) { (error) in
+            if let error = error {
+                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+            }
+        }
+    }
+    
     
     // [START receive_message]
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
@@ -139,11 +153,35 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             print("Message ID: \(messageID)")
         }
         
+        goToView()
+        
         // Print full message.
         print(userInfo)
         
         completionHandler()
     }
+    
+    func goToView() {
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        
+        for child in (self.window?.rootViewController?.childViewControllers)! {
+            
+            if child.restorationIdentifier == "Three" {
+                
+                let tabbarcontroller = self.window?.rootViewController as! MainTabViewController
+                
+                tabbarcontroller.selectedIndex = 2
+                
+                let lastestPostsTableViewController = (child.childViewControllers[0]) as! ListTableViewController
+                let simplePostVC = (storyboard.instantiateViewController(withIdentifier: "Four")) as! BooksTableViewController
+                
+                lastestPostsTableViewController.navigationController?.pushViewController(simplePostVC, animated: true)
+            }
+        }
+        
+    }
+    
 }
 // [END ios_10_message_handling]
 
