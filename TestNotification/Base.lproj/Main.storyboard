@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="-237.59999999999999" y="-87.706146926536732"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab View Controller-->
         <scene sceneID="YTP-xZ-nRG">
             <objects>
-                <tabBarController id="SAJ-nx-Ihl" sceneMemberID="viewController">
+                <tabBarController id="SAJ-nx-Ihl" customClass="MainTabViewController" customModule="TestNotification" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2JY-JU-yis">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

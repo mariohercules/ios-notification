@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80F432E5201A4E7D00F81978 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F432E4201A4E7D00F81978 /* MainTabViewController.swift */; };
 		995E37DBC90FD72751A7C695 /* Pods_TestNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100EA1302D9FFBBE86301D54 /* Pods_TestNotification.framework */; };
 		AC0ABC0F1FE54B5700AEA993 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0ABC0E1FE54B5700AEA993 /* AppDelegate.swift */; };
 		AC0ABC111FE54B5700AEA993 /* OneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0ABC101FE54B5700AEA993 /* OneViewController.swift */; };
@@ -15,7 +16,6 @@
 		AC0ABC191FE54B5800AEA993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0ABC171FE54B5800AEA993 /* LaunchScreen.storyboard */; };
 		AC0ABC221FE54D6600AEA993 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC0ABC211FE54D6600AEA993 /* GoogleService-Info.plist */; };
 		AC0ABC241FE552F800AEA993 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0ABC231FE552D900AEA993 /* UserNotifications.framework */; };
-		AC623FDA201978240051CB0D /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC623FD9201978240051CB0D /* Navigator.swift */; };
 		AC623FDC201980850051CB0D /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC623FDB201980850051CB0D /* TwoViewController.swift */; };
 		AC623FDE201981230051CB0D /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC623FDD201981230051CB0D /* NavigationViewController.swift */; };
 		AC623FE0201981570051CB0D /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC623FDF201981570051CB0D /* ListTableViewController.swift */; };
@@ -26,6 +26,7 @@
 		0917C4753EB61F53964D2629 /* Pods-TestNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestNotification/Pods-TestNotification.debug.xcconfig"; sourceTree = "<group>"; };
 		100EA1302D9FFBBE86301D54 /* Pods_TestNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10DABD0800967E0D8880E3A1 /* Pods-TestNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestNotification/Pods-TestNotification.release.xcconfig"; sourceTree = "<group>"; };
+		80F432E4201A4E7D00F81978 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		AC0ABC0B1FE54B5700AEA993 /* TestNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0ABC0E1FE54B5700AEA993 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC0ABC101FE54B5700AEA993 /* OneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		AC0ABC201FE54C9C00AEA993 /* TestNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestNotification.entitlements; sourceTree = "<group>"; };
 		AC0ABC211FE54D6600AEA993 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC0ABC231FE552D900AEA993 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		AC623FD9201978240051CB0D /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		AC623FDB201980850051CB0D /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 		AC623FDD201981230051CB0D /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		AC623FDF201981570051CB0D /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +89,6 @@
 				AC0ABC201FE54C9C00AEA993 /* TestNotification.entitlements */,
 				AC0ABC0E1FE54B5700AEA993 /* AppDelegate.swift */,
 				AC0ABC101FE54B5700AEA993 /* OneViewController.swift */,
-				AC623FD9201978240051CB0D /* Navigator.swift */,
 				AC0ABC121FE54B5700AEA993 /* Main.storyboard */,
 				AC0ABC151FE54B5800AEA993 /* Assets.xcassets */,
 				AC0ABC171FE54B5800AEA993 /* LaunchScreen.storyboard */,
@@ -99,6 +98,7 @@
 				AC623FDD201981230051CB0D /* NavigationViewController.swift */,
 				AC623FDF201981570051CB0D /* ListTableViewController.swift */,
 				AC623FE1201981810051CB0D /* BooksTableViewController.swift */,
+				80F432E4201A4E7D00F81978 /* MainTabViewController.swift */,
 			);
 			path = TestNotification;
 			sourceTree = "<group>";
@@ -252,9 +252,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0ABC111FE54B5700AEA993 /* OneViewController.swift in Sources */,
+				80F432E5201A4E7D00F81978 /* MainTabViewController.swift in Sources */,
 				AC0ABC0F1FE54B5700AEA993 /* AppDelegate.swift in Sources */,
 				AC623FE2201981810051CB0D /* BooksTableViewController.swift in Sources */,
-				AC623FDA201978240051CB0D /* Navigator.swift in Sources */,
 				AC623FE0201981570051CB0D /* ListTableViewController.swift in Sources */,
 				AC623FDE201981230051CB0D /* NavigationViewController.swift in Sources */,
 				AC623FDC201980850051CB0D /* TwoViewController.swift in Sources */,
