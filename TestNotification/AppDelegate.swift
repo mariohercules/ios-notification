@@ -36,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
+        Navigator.navigate(to: NavigationViewController.self)
+        
         // [END register_for_notifications]
         return true
     }
