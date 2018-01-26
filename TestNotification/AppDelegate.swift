@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationContent = UNMutableNotificationContent()
         
         // Configure Notification Content
-        notificationContent.title = "Cocoacasts"
+        notificationContent.title = "Push"
         notificationContent.subtitle = "Local Notifications"
         notificationContent.body = "In this tutorial, you learn how to schedule local notifications with the User Notifications framework."
         
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
         
         // Create Notification Request
-        let notificationRequest = UNNotificationRequest(identifier: "cocoacasts_local_notification", content: notificationContent, trigger: notificationTrigger)
+        let notificationRequest = UNNotificationRequest(identifier: "local_notification", content: notificationContent, trigger: notificationTrigger)
         
         // Add Request to User Notification Center
         UNUserNotificationCenter.current().add(notificationRequest) { (error) in
@@ -153,7 +153,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             print("Message ID: \(messageID)")
         }
         
-        goToView()
+        // calling when user taps on notification
+        navigateToView()
         
         // Print full message.
         print(userInfo)
@@ -161,7 +162,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         completionHandler()
     }
     
-    func goToView() {
+    func navigateToView() {
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         
@@ -171,12 +172,13 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                 
                 let tabbarcontroller = self.window?.rootViewController as! MainTabViewController
                 
+                // Select TabBarItem with Index = 2
                 tabbarcontroller.selectedIndex = 2
                 
-                let lastestPostsTableViewController = (child.childViewControllers[0]) as! ListTableViewController
-                let simplePostVC = (storyboard.instantiateViewController(withIdentifier: "Four")) as! BooksTableViewController
+                let listTableViewController = (child.childViewControllers[0]) as! ListTableViewController
+                let booksTableViewController = (storyboard.instantiateViewController(withIdentifier: "Four")) as! BooksTableViewController
                 
-                lastestPostsTableViewController.navigationController?.pushViewController(simplePostVC, animated: true)
+                listTableViewController.navigationController?.pushViewController(booksTableViewController, animated: true)
             }
         }
         
