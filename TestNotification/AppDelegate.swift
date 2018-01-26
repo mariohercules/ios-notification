@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notificationContent.body = "In this tutorial, you learn how to schedule local notifications with the User Notifications framework."
         
         // Add Trigger
-        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 2.0, repeats: false)
         
         // Create Notification Request
         let notificationRequest = UNNotificationRequest(identifier: "local_notification", content: notificationContent, trigger: notificationTrigger)
