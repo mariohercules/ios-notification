@@ -1,8 +1,8 @@
 # Open app in specific view when user taps on push notification with iOS Swift
 
-### The file 'GoogleService-Info.plist' needs to be generated on Firebase site to compile this project.
+## The file 'GoogleService-Info.plist' needs to be generated on Firebase site to compile this project.
 
-[AppDelegate.swift]
+## [AppDelegate.swift]
 
 ```swift
        
@@ -30,5 +30,7 @@
 
 ```
 
+## Main.Storyboard
 
+![GitHub Logo](https://raw.githubusercontent.com/mariohercules/ios-notification/master/TestNotification/Resourses/Main_storyboard.png)
 
