@@ -170,7 +170,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             
             if child.restorationIdentifier == "Three" {
                 
-                let tabbarcontroller = self.window?.rootViewController as! MainTabViewController
+                let tabbarcontroller =  storyboard.instantiateViewController(withIdentifier: "Home") as! MainTabViewController
+                //self.window?.rootViewController as! MainTabViewController
         
                 tabbarcontroller.selectedIndex = 2
                 
