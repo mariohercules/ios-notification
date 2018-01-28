@@ -170,13 +170,13 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             
             if child.restorationIdentifier == "Three" {
                 
-                let tabbarcontroller =  storyboard.instantiateViewController(withIdentifier: "Home") as! MainTabViewController
-                //self.window?.rootViewController as! MainTabViewController
-        
+                let tabbarcontroller = self.window?.rootViewController as! MainTabViewController
+                
+                // Select TabBarItem with Index = 2
                 tabbarcontroller.selectedIndex = 2
                 
-                let listTableViewController = (child.childViewControllers[0]) //as! ListTableViewController
-                let booksTableViewController = (storyboard.instantiateViewController(withIdentifier: "Four")) //as! BooksTableViewController
+                let listTableViewController = (child.childViewControllers[0]) as! ListTableViewController
+                let booksTableViewController = (storyboard.instantiateViewController(withIdentifier: "Four")) as! BooksTableViewController
                 
                 listTableViewController.navigationController?.pushViewController(booksTableViewController, animated: true)
             }
