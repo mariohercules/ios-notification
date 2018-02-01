@@ -165,20 +165,13 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     func navigateToView() {
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        
         for child in (self.window?.rootViewController?.childViewControllers)! {
-            
             if child.restorationIdentifier == "Three" {
-                
                 let tabbarcontroller = self.window?.rootViewController as! MainTabViewController
-                
-                // Select TabBarItem with Index = 2
-                tabbarcontroller.selectedIndex = 2
-                
+                    tabbarcontroller.selectedIndex = 2
                 let listTableViewController = (child.childViewControllers[0]) as! ListTableViewController
                 let booksTableViewController = (storyboard.instantiateViewController(withIdentifier: "Four")) as! BooksTableViewController
-                
-                listTableViewController.navigationController?.pushViewController(booksTableViewController, animated: true)
+                    listTableViewController.navigationController?.pushViewController(booksTableViewController, animated: true)
             }
         }
         
